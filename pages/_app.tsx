@@ -1,6 +1,7 @@
 
 import { AppProps } from 'next/app'
-import {FC, Fragment } from "react";
+import { FC, Fragment } from "react";
+import "@assets/main.css"
 
 
 const Noop: FC = ({children}) => {
