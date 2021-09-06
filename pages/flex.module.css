@@ -1,0 +1,17 @@
+.parent {
+  display: flex;
+}
+
+.child {
+  width: 200px;
+  height: 200px;
+  /* margin: 1px; */
+  @apply bg-red;
+  flex: 1;
+}
+
+.child:first-child {
+  flex-basis: 200px;
+
+  /*  */
+}

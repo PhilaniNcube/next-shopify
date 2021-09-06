@@ -2,6 +2,7 @@
 import { AppProps } from 'next/app'
 import { FC, Fragment } from "react";
 import "@assets/main.css"
+import { UIProvider, useUI } from '@components/ui/context';
 
 
 const Noop: FC = ({children}) => {
@@ -11,15 +12,17 @@ const Noop: FC = ({children}) => {
 }
 
 function MyApp({ Component, pageProps }: AppProps & { Component: {Layout:FC}} ) {
-    
-const Layout = Component.Layout ?? Noop
+    const Layout = Component.Layout ?? Noop
+
+
+   
 
     return (
-        <Layout>
-           
+        <UIProvider>
+            <Layout>
                 <Component {...pageProps} />
-            
-        </Layout>
+            </Layout>
+        </UIProvider>
 
     )
 }
