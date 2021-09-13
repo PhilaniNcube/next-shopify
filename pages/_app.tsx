@@ -2,7 +2,8 @@
 import { AppProps } from 'next/app'
 import { FC, Fragment } from "react";
 import "@assets/main.css"
-import { UIProvider, useUI } from '@components/ui/context';
+import 'keen-slider/keen-slider.min.css';
+import { UIProvider } from '@components/ui/context';
 
 
 const Noop: FC = ({children}) => {

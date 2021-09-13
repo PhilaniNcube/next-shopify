@@ -1,4 +1,7 @@
 import { Layout } from '@components/common';
+import { ProductView } from '@components/Product';
+
+import { Container } from '@components/ui';
 import { getConfig } from '@framework/api/config';
 import {getAllProductPaths, getProduct} from '@framework/product';
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
@@ -37,12 +40,13 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<{ slug: s
 
 
 export default function ProductSlug({ product }: InferGetStaticPropsType<typeof getStaticProps>) {
-    console.log(product)
+
+   
+   
     return (
-        <div>
-            {product?.slug}
-            {product?.name}
-        </div>
+        <>
+      {product && <ProductView product={product} />}
+        </>
     )
 }
 
